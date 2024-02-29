@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+
+
+{% block main %}
+
+<div class="d-flex flex-column align-items-center justify-content-center tex-center mt-5 pt-5 " >
+    <h1>Registerd</h1>
+<table class="table table-dark table-striped w-50 mt-3">
+    <thead>
+      <tr>
+        <th scope="col">Kit_No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Club</th>
+        <th scope="col">Field</th>
+        <th scope="col">Location</th>
+        <th scope="col">date</th>
+        <th scope="col">EDIT</th>
+        <th scope="col">DELETE</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for re in viewr %}
+      <tr>
+       
+        <th scope="row">{{re.ide}}</th>
+        <td>{{re.name}}</td>
+        <td>{{re.Age}}</td>
+        <td>{{re.collage_name}}</td>
+        <td>{{re.field}}</td>
+        <td>{{re.location}}</td>
+        <td>{{re.date}}</td>
+        <td> <a href="{% url 'register' re.id%}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Edit</a></td>
+        <td> <a href="{% url 'deleteregister' re.id%}" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Delete</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+</div>
+{% endblock %}

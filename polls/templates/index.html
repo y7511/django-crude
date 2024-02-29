@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+
+{% block main %}
+    <div class="d-flex flex-column align-items-center justify-content-center tex-center mt-5 pt-5 " style="border: 1px solid ;" >
+        <h1 class="title">Football Players register</h1>
+        <p class="w-50 text-center pt-3">
+            Welcome to Yordi Players registering Website, the premier platform for registering footballers' information! Whether you're a budding talent or an established player, our website simplifies the process of capturing vital player details such as name, age, club affiliation, height, and kit number. Join us and showcase your skills to the world!</p>
+        <div class="d-flex gap-3 p-4">
+            <button type="button" class="btn btn-success btn-dark"><a class="link-offset-2 link-underline link-underline-opacity-0 text-white" href="{% url 'post' %}">Post</a></button>
+            <button type="button" class="btn btn-success btn-dark"><a class="link-offset-2 link-underline link-underline-opacity-0 text-white" href="{% url 'registercreate' %}">register</a></button>
+        </div>
+    </div>
+
+{% endblock %}

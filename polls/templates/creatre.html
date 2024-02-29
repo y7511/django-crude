@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+
+{% block main %}
+    <div class="d-flex justify-content-center">
+    <form method="post" action="." enctype="multipart/form-data" class="w-50 border mt-5 p-3">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <br>
+            {{fo.name}}
+            <br>
+            <label for="exampleInputEmail1" class="form-label">Age</label>
+            <br>
+            {{fo.Age}}
+            <br>
+            <label for="exampleInputEmail1" class="form-label">Kit_No</label>
+            <br>
+            {{fo.ide}}
+            <br>
+            <label for="exampleInputEmail1" class="form-label">Club</label>
+            <br>
+            {{fo.collage_name}}
+            <br>
+            <label for="exampleInputEmail1" class="form-label">Possision</label>
+            <br>
+            {{fo.field}}
+            <br>
+            <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Hight</label>
+            <br>
+            {{fo.location}}
+            </div>
+            <button class="btn btn-dark" type="submit">Submit</button>
+            
+    </form>
+    </div>
+{% endblock %}

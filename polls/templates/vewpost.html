@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+
+
+{% block main %}
+    <div class="mt-4 p-5 d-flex gap-2 flex-wrap justify-content-center">
+       {% for pos in viewp %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{pos.img.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h4 class="card-title">Playing Possision: {{pos.sub}}</h4>
+            <h5 class="card-text">Name: {{pos.name}}</h5>
+            <p class="card-text">{{pos.dis}}</p>
+            <p class="card-text">{{pos.date}}</p>
+            <div class="d-flex gap-3">
+                <a href="{% url 'editpost' pos.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'delete' pos.id %}" class="btn btn-danger">Delete</a>
+            </div>
+            
+            </div>
+        </div>
+
+      {% endfor %}
+    </div>
+
+{% endblock %}
